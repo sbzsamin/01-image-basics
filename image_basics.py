@@ -100,7 +100,7 @@ def preprocess_rescale_sitk(img, new_min_val, new_max_val):
     # todo: rescale the intensities of the img to the range [new_min_val, new_max_val]
     # (hint: RescaleIntensity)
     """
-    rescaled_img = None  # todo: modify here
+    rescaled_img = sitk.RescaleIntensity(img, new_min_val, new_max_val)  # todo: modify here
 
     return rescaled_img
 
