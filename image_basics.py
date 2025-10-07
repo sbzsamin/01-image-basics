@@ -139,7 +139,7 @@ def register_images(img, label_img, atlas_img):
         transform=transform,
         interpolator=sitk.sitkNearestNeighbor,
         defaultPixelValue=0.0,
-        outputPixelType=img.GetPixelIDValue()
+        outputPixelType=label_img.GetPixelIDValue()
     )  # todo: modify here
 
     return registered_img, registered_label
