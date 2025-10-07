@@ -86,8 +86,10 @@ def preprocess_rescale_numpy(np_img, new_min_val, new_max_val):
     """
     max_val = np_img.max()
     min_val = np_img.min()
+    eps = 1e-8 #avoid deviding by 0
 
-    rescaled_np_img = None  # todo: modify here
+    rescaled_np_img = (((np_img - min_val) / ((max_val - min_val) + eps))
+                       * (new_max_val - new_min_val) + new_min_val)  # todo: modify here
 
     return rescaled_np_img
 
